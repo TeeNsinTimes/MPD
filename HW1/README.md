@@ -1,3 +1,5 @@
+# strcpy
+  
 [strcpy_origin] - original function of strcpy, DMIPS/Mhz = 0.72
 
 [strcpy_1] - similar to strcpy_origin, it copies 1 char in current position(address), and move tmp & src to the next position, DMIPS/Mhz = 0.75
@@ -8,6 +10,12 @@
 
 [strcpy_4] - similar as above, but uses 4 tmps and 4 srcs, DMIPS/Mhz = 0.66
 
+# strcmp
+  
+[strcmp_origin] - empty folder, since it is identical to strcpy_origin, DMIPS/Mhz = 0.72
+
+
+
 Each folder contains
 
 1. string.c - the (modified) string.c file
@@ -15,7 +23,7 @@ Each folder contains
 3. *.ebf - the binary file send into Aquila
 4. *.txt - the output of Dhrystone running on Tera Term
 5. *.csv - the iladata saved after captured
-6. *.png *.pdf - contains iladata which I considered important
+6. *.png or *.pdf - contains iladata which I considered important
 
 Notice:
 

@@ -1,6 +1,6 @@
 # strcpy
   
-[strcpy_origin] - original function of strcpy, DMIPS/Mhz = 0.72
+[strcpy_origin] - original version of strcpy, DMIPS/Mhz = 0.72
 
 [strcpy_1] - similar to strcpy_origin, it copies 1 char in current position(address), and move tmp & src to the next position, DMIPS/Mhz = 0.75
 
@@ -12,7 +12,7 @@
 
 # strcmp
   
-[strcmp_origin] - original function of strcmp, DMIPS/Mhz = 0.72
+[strcmp_origin] - original version of strcmp, DMIPS/Mhz = 0.72
 
 
 

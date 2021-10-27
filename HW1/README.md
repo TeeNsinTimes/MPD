@@ -12,7 +12,7 @@
 
 # strcmp
   
-[strcmp_origin] - empty folder, since it is identical to strcpy_origin, DMIPS/Mhz = 0.72
+[strcmp_origin] - original function of strcmp, DMIPS/Mhz = 0.72
 
 
 

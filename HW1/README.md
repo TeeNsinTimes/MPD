@@ -23,7 +23,7 @@ Each folder contains
 3. *.ebf - the binary file send into Aquila
 4. *.txt - the output of Dhrystone running on Tera Term
 5. *.csv - the iladata saved after captured
-6. *.png or *.pdf - contains iladata which I considered important
+6. *.png or *.pdf or *.xlsx - contains iladata which I considered important
 
 Notice:
 

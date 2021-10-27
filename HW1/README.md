@@ -1,4 +1,4 @@
-[strcpy_origin] - it is the original function of strcpy, DMIPS/Mhz = 0.72
+[origin] - original function of strcpy & strcmp, DMIPS/Mhz = 0.72
 
 [strcpy_1] - is similar to strcpy_origin, it copies 1 char in current position(address), and move tmp & src to the next position, DMIPS/Mhz = 0.75
 

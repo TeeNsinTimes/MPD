@@ -6,7 +6,7 @@
 
 **[strcpy_3] - similar as above, but uses 3 tmps and 3 srcs, DMIPS/Mhz = 0.86**
 
-[strcpy_4] - similar as above, but uses 4 tmps and 4 srcs, DMIPS/Mhz = 
+[strcpy_4] - similar as above, but uses 4 tmps and 4 srcs, DMIPS/Mhz = 0.66
 
 Each folder contains
 

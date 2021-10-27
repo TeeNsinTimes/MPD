@@ -11,3 +11,12 @@
 Notice:
 
 Except for strcpy_4, all strcpys are doing the correct things; strcpy_4 failes to copy the last 2 chars, but I haven't found out the reason yet.
+
+Each folder contains
+
+1. string.c - the (modified) string.c file
+2. *.OBJDUMP - used for tracing
+3. *.ebf - the binary file send into Aquila
+4. *.txt - the output of Dhrystone running on Tera Term
+5. *.csv - the iladata saved after captured
+6. *.png - contains iladata which I considered important

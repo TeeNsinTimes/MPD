@@ -16,9 +16,9 @@
 
 [strcmp_2] - DMIPS/Mhz = 0.73
 
-[strcmp_3] - is in [0.9], DMIPS/Mhz = 0.9
+**[strcmp_3] - is in [0.9], DMIPS/Mhz = 0.9**
 
-[strcmp_4] - 
+[strcmp_4] - DMIPS/Mhz = 0.90
 
 # Each folder contains
 

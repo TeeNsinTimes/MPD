@@ -1,0 +1,79 @@
+=======================================================================
+Copyright (c) 2019-2020, EISL@NCTU, Hsinchu, Taiwan.
+The Aquila SoC is ready to go.
+Waiting for a program to be sent from the UART ...
+Aquila executes code at 0x1000, size = 0x59FC bytes.
+-----------------------------------------------------------------------
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Execution starts, 1000000 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           c
+        should be:   c
+Ch_2_Glob:           c
+        should be:   c
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    1000010
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          40964
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          40964
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+It tooks 12.64 seconds.
+Microseconds for one run through Dhrystone: 12.640007
+Dhrystones per Second:                      79113.9
+VAX MIPS:                                   45.0
+DMIPS/Mhz:                                   0.90
+
+
+-----------------------------------------------------------------------
+Aquila execution finished.
+
+
+Program exit with a status code 0
+
+-----------------------------------------------------------------------
+Aquila execution finished.
+Press <reset> on the FPGA board to reboot the cpu ...

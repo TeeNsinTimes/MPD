@@ -13,10 +13,10 @@
 # strcmp
   
 [strcmp_origin] - original version of strcmp, DMIPS/Mhz = 0.72
+[strcmp_2] - DMIPS/Mhz = 0.73
 
 
-
-Each folder contains
+# Each folder contains
 
 1. string.c - the (modified) string.c file
 2. *.objdump - used for tracing
@@ -25,6 +25,6 @@ Each folder contains
 5. *.csv - the iladata saved after captured
 6. *.png or *.pdf or *.xlsx - contains iladata which I considered important
 
-Notice:
+# Notice:
 
 Except for strcpy_4, all strcpys are doing the correct things; strcpy_4 failes to copy the last 2 chars, but I haven't found out the reason yet.

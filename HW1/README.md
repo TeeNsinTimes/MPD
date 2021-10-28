@@ -13,6 +13,7 @@
 # strcmp
   
 [strcmp_origin] - original version of strcmp, DMIPS/Mhz = 0.72
+
 [strcmp_2] - DMIPS/Mhz = 0.73
 
 

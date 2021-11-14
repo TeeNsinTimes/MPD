@@ -311,7 +311,7 @@ begin
             local_BHT[idx] <= 4'b0;
             
         for (idx = 0; idx < ENTRY_NUM; idx = idx + 1)
-            for (idx2 = 0; idx2 < 15; idx2 = idx2 + 1)
+            for (idx2 = 0; idx2 < 16; idx2 = idx2 + 1)
                 local_PHT[idx][idx2] <= 2'b0;
     end
     else if (stall_i)
@@ -320,7 +320,7 @@ begin
             local_BHT[idx] <= local_BHT[idx];
         
         for (idx = 0; idx < ENTRY_NUM; idx = idx + 1)
-            for (idx2 = 0; idx2 < 15; idx2 = idx2 + 1)
+            for (idx2 = 0; idx2 < 16; idx2 = idx2 + 1)
                 local_PHT[idx][idx2] <= local_PHT[idx][idx2];
     end
     else
@@ -328,7 +328,7 @@ begin
         if (we) // Execute the branch inastruction for the first time.
         begin
             local_BHT[write_addr] <= {branch_taken_i, branch_taken_i, branch_taken_i, branch_taken_i};
-            for (idx2 = 0; idx2 < 15; idx2 = idx2 + 1)
+            for (idx2 = 0; idx2 < 16; idx2 = idx2 + 1)
                 local_PHT[write_addr][idx2] <= local_PHT[write_addr][idx2];
         end
         else if (exe_is_branch_i)

@@ -232,7 +232,7 @@ assign M_DEVICE_data_o        = (data_sel == 2)? p_d_core2mem : 32'h0;
 // ----------------------------------------------------------------------------
 //  Aquila processor core
 //
-core_top #(.HART_ID(HART_ID), .XLEN(XLEN), .BPU_ENTRY_NUM(64))
+core_top #(.HART_ID(HART_ID), .XLEN(XLEN), .BPU_ENTRY_NUM(32))
 RISCV_CORE0(
     // System signals
     .clk_i(clk_i),

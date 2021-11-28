@@ -313,6 +313,14 @@ begin
     begin
         cache_hit_cnt = 0;
         cache_miss_cnt = 0;
+        victim_sel_cnt[0] = 0;
+        victim_sel_cnt[1] = 0;
+        victim_sel_cnt[2] = 0;
+        victim_sel_cnt[3] = 0;
+        victim_sel_cnt[4] = 0;
+        victim_sel_cnt[5] = 0;
+        victim_sel_cnt[6] = 0;
+        victim_sel_cnt[7] = 0;
     end
     else if (S == Analysis && cache_hit)
         cache_hit_cnt = cache_hit_cnt + 1;
@@ -323,62 +331,14 @@ end
 always @(*)
 begin
     case ( { way_hit[0], way_hit[1], way_hit[2], way_hit[3], way_hit[4], way_hit[5], way_hit[6], way_hit[7] } )
-        8'b1000_0000:
-        begin
-            PLRU_cnt[line_index][0] <= 0;
-            PLRU_cnt[line_index][1] <= 0;
-            PLRU_cnt[line_index][3] <= 0;
-            hit_index = 0;
-        end
-        8'b0100_0000:
-        begin
-            PLRU_cnt[line_index][0] <= 1;
-            PLRU_cnt[line_index][1] <= 0;
-            PLRU_cnt[line_index][3] <= 0;
-            hit_index = 1;
-        end
-        8'b0010_0000:
-        begin
-            PLRU_cnt[line_index][2] <= 0;
-            PLRU_cnt[line_index][1] <= 1;
-            PLRU_cnt[line_index][3] <= 0;
-            hit_index = 2;
-        end
-        8'b0001_0000:
-        begin
-            PLRU_cnt[line_index][2] <= 1;
-            PLRU_cnt[line_index][1] <= 1;
-            PLRU_cnt[line_index][3] <= 0;
-            hit_index = 3;
-        end
-        8'b0000_1000:
-        begin
-            PLRU_cnt[line_index][4] <= 0;
-            PLRU_cnt[line_index][5] <= 0;
-            PLRU_cnt[line_index][3] <= 1;
-            hit_index = 4;
-        end
-        8'b0000_0100:
-        begin
-            PLRU_cnt[line_index][4] <= 1;
-            PLRU_cnt[line_index][5] <= 0;
-            PLRU_cnt[line_index][3] <= 1;
-            hit_index = 5;
-        end
-        8'b0000_0010:
-        begin
-            PLRU_cnt[line_index][6] <= 0;
-            PLRU_cnt[line_index][5] <= 1;
-            PLRU_cnt[line_index][3] <= 1;
-            hit_index = 6;
-        end
-        8'b0000_0001:
-        begin
-            PLRU_cnt[line_index][6] <= 1;
-            PLRU_cnt[line_index][5] <= 1;
-            PLRU_cnt[line_index][3] <= 1;
-            hit_index = 7;
-        end
+        8'b1000_0000: hit_index = 0;
+        8'b0100_0000: hit_index = 1;
+        8'b0010_0000: hit_index = 2;
+        8'b0001_0000: hit_index = 3;
+        8'b0000_1000: hit_index = 4;
+        8'b0000_0100: hit_index = 5;
+        8'b0000_0010: hit_index = 6;
+        8'b0000_0001: hit_index = 7;
         default: hit_index = 0; // error: the same line_index and tag in the cache!
     endcase
 end
@@ -388,6 +348,7 @@ begin
     c_data = c_data_o[hit_index];
 end
 
+(* mark_debug = "true" *) reg [31 : 0] victim_sel_cnt [0 : N_WAYS-1];
 always @(posedge clk_i)
 begin
     if (PLRU_cnt[line_index][3])
@@ -396,34 +357,26 @@ begin
         begin
             if (PLRU_cnt[line_index][0])
             begin
-                PLRU_cnt[line_index][0] <= 0;
-                PLRU_cnt[line_index][1] <= 0;
-                PLRU_cnt[line_index][3] <= 0;
                 victim_sel <= 0;
+                victim_sel_cnt[0] = victim_sel_cnt[0] + 1;
             end
             else
-            begin
-                PLRU_cnt[line_index][0] <= 1;
-                PLRU_cnt[line_index][1] <= 0;
-                PLRU_cnt[line_index][3] <= 0;         
+            begin      
                 victim_sel <= 1;
+                victim_sel_cnt[1] = victim_sel_cnt[1] + 1;
             end
        end
        else
        begin
            if (PLRU_cnt[line_index][2])
            begin
-               PLRU_cnt[line_index][2] <= 0;
-               PLRU_cnt[line_index][1] <= 1;
-               PLRU_cnt[line_index][3] <= 0; 
                victim_sel <= 2;
+               victim_sel_cnt[2] = victim_sel_cnt[2] + 1;
            end
            else
            begin
-               PLRU_cnt[line_index][2] <= 1;
-               PLRU_cnt[line_index][1] <= 1;
-               PLRU_cnt[line_index][3] <= 0; 
                victim_sel <= 3;
+               victim_sel_cnt[3] = victim_sel_cnt[3] + 1;
            end
         end
     end
@@ -433,34 +386,26 @@ begin
         begin
             if (PLRU_cnt[line_index][4])
             begin
-                PLRU_cnt[line_index][4] <= 0;
-                PLRU_cnt[line_index][5] <= 0;
-                PLRU_cnt[line_index][3] <= 1; 
                 victim_sel <= 4;
+                victim_sel_cnt[4] = victim_sel_cnt[4] + 1;
             end
             else
             begin
-                PLRU_cnt[line_index][4] <= 1;
-                PLRU_cnt[line_index][5] <= 0;
-                PLRU_cnt[line_index][3] <= 1; 
                 victim_sel <= 5;
+                victim_sel_cnt[5] = victim_sel_cnt[5] + 1;
             end
         end
         else
         begin
             if (PLRU_cnt[line_index][6])
             begin
-                PLRU_cnt[line_index][6] <= 0;
-                PLRU_cnt[line_index][5] <= 1;
-                PLRU_cnt[line_index][3] <= 1; 
                 victim_sel <= 6;
+                victim_sel_cnt[6] = victim_sel_cnt[6] + 1;
             end
             else
             begin
-                PLRU_cnt[line_index][6] <= 1;
-                PLRU_cnt[line_index][5] <= 1;
-                PLRU_cnt[line_index][3] <= 1; 
                 victim_sel <= 7;
+                victim_sel_cnt[7] = victim_sel_cnt[7] + 1;
             end
         end
     end
@@ -504,6 +449,128 @@ begin
     if (rst_i)
         for (idx = 0; idx < N_LINES; idx = idx + 1)
             PLRU_cnt[idx] <= 0;
+    else if (S == RdfromMemFinish)
+    begin
+        if (PLRU_cnt[line_index][3])
+        begin
+            if (PLRU_cnt[line_index][1])
+            begin
+                if (PLRU_cnt[line_index][0])
+                begin
+                    PLRU_cnt[line_index][0] <= 0;
+                    PLRU_cnt[line_index][1] <= 0;
+                    PLRU_cnt[line_index][3] <= 0;
+                end
+                else
+                begin
+                    PLRU_cnt[line_index][0] <= 1;
+                    PLRU_cnt[line_index][1] <= 0;
+                    PLRU_cnt[line_index][3] <= 0;
+                end
+            end
+            else
+            begin
+                if (PLRU_cnt[line_index][2])
+                begin
+                    PLRU_cnt[line_index][2] <= 0;
+                    PLRU_cnt[line_index][1] <= 1;
+                    PLRU_cnt[line_index][3] <= 0;
+                end
+                else
+                begin
+                    PLRU_cnt[line_index][2] <= 1;
+                    PLRU_cnt[line_index][1] <= 1;
+                    PLRU_cnt[line_index][3] <= 0;
+                end
+            end
+        end
+        else
+        begin
+            if (PLRU_cnt[line_index][5])
+            begin
+                if (PLRU_cnt[line_index][4])
+                begin
+                    PLRU_cnt[line_index][4] <= 0;
+                    PLRU_cnt[line_index][5] <= 0;
+                    PLRU_cnt[line_index][3] <= 1;
+                end
+                else
+                begin
+                    PLRU_cnt[line_index][4] <= 1;
+                    PLRU_cnt[line_index][5] <= 0;
+                    PLRU_cnt[line_index][3] <= 1;
+                end
+            end
+            else
+            begin
+                if (PLRU_cnt[line_index][6])
+                begin
+                    PLRU_cnt[line_index][6] <= 0;
+                    PLRU_cnt[line_index][5] <= 1;
+                    PLRU_cnt[line_index][3] <= 1;
+                end
+                else
+                begin
+                    PLRU_cnt[line_index][6] <= 1;
+                    PLRU_cnt[line_index][5] <= 1;
+                    PLRU_cnt[line_index][3] <= 1;
+                end
+            end
+        end
+    end
+    else if (S == Analysis && cache_hit)
+    begin
+        case ( { way_hit[0], way_hit[1], way_hit[2], way_hit[3], way_hit[4], way_hit[5], way_hit[6], way_hit[7] } )
+            8'b1000_0000:
+            begin
+                PLRU_cnt[line_index][0] <= 0;
+                PLRU_cnt[line_index][1] <= 0;
+                PLRU_cnt[line_index][3] <= 0;
+            end
+            8'b0100_0000:
+            begin
+                PLRU_cnt[line_index][0] <= 1;
+                PLRU_cnt[line_index][1] <= 0;
+                PLRU_cnt[line_index][3] <= 0;
+            end
+            8'b0010_0000:
+            begin
+                PLRU_cnt[line_index][2] <= 0;
+                PLRU_cnt[line_index][1] <= 1;
+                PLRU_cnt[line_index][3] <= 0;
+            end
+            8'b0001_0000:
+            begin
+                PLRU_cnt[line_index][2] <= 1;
+                PLRU_cnt[line_index][1] <= 1;
+                PLRU_cnt[line_index][3] <= 0;
+            end
+            8'b0000_1000:
+            begin
+                PLRU_cnt[line_index][4] <= 0;
+                PLRU_cnt[line_index][5] <= 0;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            8'b0000_0100:
+            begin
+                PLRU_cnt[line_index][4] <= 1;
+                PLRU_cnt[line_index][5] <= 0;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            8'b0000_0010:
+            begin
+                PLRU_cnt[line_index][6] <= 0;
+                PLRU_cnt[line_index][5] <= 1;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            8'b0000_0001:
+            begin
+                PLRU_cnt[line_index][6] <= 1;
+                PLRU_cnt[line_index][5] <= 1;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+        endcase
+    end
     //else if (S == RdfromMemFinish)
         //FIFO_cnt[line_index] <= FIFO_cnt[line_index] + 1;
 end

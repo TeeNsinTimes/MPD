@@ -305,15 +305,20 @@ assign way_hit[7] = ( VALID_[line_index][7] && (c_tag_o[7] == tag) ) ? 1 : 0;
 assign cache_hit  = (way_hit[0] || way_hit[1] || way_hit[2] || way_hit[3] || way_hit[4] || way_hit[5] || way_hit[6] || way_hit[7]);
 
 (* mark_debug = "true" *) reg [31:0] cache_hit_cnt;
+(* mark_debug = "true" *) reg [31:0] cache_miss_cnt;
 
 always @(posedge clk_i)
 begin
     if (rst_i)
+    begin
         cache_hit_cnt = 0;
-    else if (cache_hit)
+        cache_miss_cnt = 0;
+    end
+    else if (S == Analysis && cache_hit)
         cache_hit_cnt = cache_hit_cnt + 1;
+    else if (S == Analysis && !cache_hit)
+        cache_miss_cnt = cache_miss_cnt + 1;
 end
-
 
 always @(*)
 begin

@@ -324,7 +324,7 @@ begin
     end
     else if (S == Analysis && cache_hit)
         cache_hit_cnt = cache_hit_cnt + 1;
-    else if (S == Analysis && !cache_hit)
+    else if (S == RdfromMemFinish)
         cache_miss_cnt = cache_miss_cnt + 1;
 end
 
@@ -358,12 +358,10 @@ begin
             if (PLRU_cnt[line_index][0])
             begin
                 victim_sel <= 0;
-                victim_sel_cnt[0] = victim_sel_cnt[0] + 1;
             end
             else
             begin      
                 victim_sel <= 1;
-                victim_sel_cnt[1] = victim_sel_cnt[1] + 1;
             end
        end
        else
@@ -371,12 +369,10 @@ begin
            if (PLRU_cnt[line_index][2])
            begin
                victim_sel <= 2;
-               victim_sel_cnt[2] = victim_sel_cnt[2] + 1;
            end
            else
            begin
                victim_sel <= 3;
-               victim_sel_cnt[3] = victim_sel_cnt[3] + 1;
            end
         end
     end
@@ -387,12 +383,10 @@ begin
             if (PLRU_cnt[line_index][4])
             begin
                 victim_sel <= 4;
-                victim_sel_cnt[4] = victim_sel_cnt[4] + 1;
             end
             else
             begin
                 victim_sel <= 5;
-                victim_sel_cnt[5] = victim_sel_cnt[5] + 1;
             end
         end
         else
@@ -400,12 +394,10 @@ begin
             if (PLRU_cnt[line_index][6])
             begin
                 victim_sel <= 6;
-                victim_sel_cnt[6] = victim_sel_cnt[6] + 1;
             end
             else
             begin
                 victim_sel <= 7;
-                victim_sel_cnt[7] = victim_sel_cnt[7] + 1;
             end
         end
     end
@@ -451,72 +443,57 @@ begin
             PLRU_cnt[idx] <= 0;
     else if (S == RdfromMemFinish)
     begin
-        if (PLRU_cnt[line_index][3])
-        begin
-            if (PLRU_cnt[line_index][1])
+        victim_sel_cnt[victim_sel] = victim_sel_cnt[victim_sel] + 1;
+        case (victim_sel)
+            3'b000:
             begin
-                if (PLRU_cnt[line_index][0])
-                begin
-                    PLRU_cnt[line_index][0] <= 0;
-                    PLRU_cnt[line_index][1] <= 0;
-                    PLRU_cnt[line_index][3] <= 0;
-                end
-                else
-                begin
-                    PLRU_cnt[line_index][0] <= 1;
-                    PLRU_cnt[line_index][1] <= 0;
-                    PLRU_cnt[line_index][3] <= 0;
-                end
+                PLRU_cnt[line_index][0] <= 0;
+                PLRU_cnt[line_index][1] <= 0;
+                PLRU_cnt[line_index][3] <= 0;
             end
-            else
+            3'b001:
             begin
-                if (PLRU_cnt[line_index][2])
-                begin
-                    PLRU_cnt[line_index][2] <= 0;
-                    PLRU_cnt[line_index][1] <= 1;
-                    PLRU_cnt[line_index][3] <= 0;
-                end
-                else
-                begin
-                    PLRU_cnt[line_index][2] <= 1;
-                    PLRU_cnt[line_index][1] <= 1;
-                    PLRU_cnt[line_index][3] <= 0;
-                end
+                PLRU_cnt[line_index][0] <= 1;
+                PLRU_cnt[line_index][1] <= 0;
+                PLRU_cnt[line_index][3] <= 0;
             end
-        end
-        else
-        begin
-            if (PLRU_cnt[line_index][5])
+            3'b010:
             begin
-                if (PLRU_cnt[line_index][4])
-                begin
-                    PLRU_cnt[line_index][4] <= 0;
-                    PLRU_cnt[line_index][5] <= 0;
-                    PLRU_cnt[line_index][3] <= 1;
-                end
-                else
-                begin
-                    PLRU_cnt[line_index][4] <= 1;
-                    PLRU_cnt[line_index][5] <= 0;
-                    PLRU_cnt[line_index][3] <= 1;
-                end
+                PLRU_cnt[line_index][2] <= 0;
+                PLRU_cnt[line_index][1] <= 1;
+                PLRU_cnt[line_index][3] <= 0;
             end
-            else
+            3'b011:
             begin
-                if (PLRU_cnt[line_index][6])
-                begin
-                    PLRU_cnt[line_index][6] <= 0;
-                    PLRU_cnt[line_index][5] <= 1;
-                    PLRU_cnt[line_index][3] <= 1;
-                end
-                else
-                begin
-                    PLRU_cnt[line_index][6] <= 1;
-                    PLRU_cnt[line_index][5] <= 1;
-                    PLRU_cnt[line_index][3] <= 1;
-                end
+                PLRU_cnt[line_index][2] <= 1;
+                PLRU_cnt[line_index][1] <= 1;
+                PLRU_cnt[line_index][3] <= 0;
             end
-        end
+            3'b100:
+            begin
+                PLRU_cnt[line_index][4] <= 0;
+                PLRU_cnt[line_index][5] <= 0;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            3'b101:
+            begin
+                PLRU_cnt[line_index][4] <= 1;
+                PLRU_cnt[line_index][5] <= 0;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            3'b110:
+            begin
+                PLRU_cnt[line_index][6] <= 0;
+                PLRU_cnt[line_index][5] <= 1;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+            3'b111:
+            begin
+                PLRU_cnt[line_index][6] <= 1;
+                PLRU_cnt[line_index][5] <= 1;
+                PLRU_cnt[line_index][3] <= 1;
+            end
+        endcase
     end
     else if (S == Analysis && cache_hit)
     begin

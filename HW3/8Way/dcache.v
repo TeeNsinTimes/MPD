@@ -305,6 +305,10 @@ assign cache_hit  = (way_hit[0] || way_hit[1] || way_hit[2] || way_hit[3] || way
 
 (* mark_debug = "true" *) reg [31:0] cache_hit_cnt;
 (* mark_debug = "true" *) reg [31:0] cache_miss_cnt;
+(* mark_debug = "true" *) reg [31:0] victim_sel_cnt [0 : 3];
+(* mark_debug = "true" *) reg [31:0] hit_latency_sum;
+(* mark_debug = "true" *) reg [31:0] miss_latency_sum;
+reg hit_cycle, miss_cycle;
 
 always @(posedge clk_i)
 begin
@@ -312,11 +316,37 @@ begin
     begin
         cache_hit_cnt = 0;
         cache_miss_cnt = 0;
+        victim_sel_cnt[0] = 0;
+        victim_sel_cnt[1] = 0;
+        victim_sel_cnt[2] = 0;
+        victim_sel_cnt[3] = 0;
+        hit_latency_sum = 0;
+        miss_latency_sum = 0;
+        hit_cycle = 0;
+        miss_cycle = 0;
     end
     else if (S == Analysis && cache_hit)
         cache_hit_cnt = cache_hit_cnt + 1;
-    else if (S == Analysis && !cache_hit)
+    else if (S == RdfromMemFinish)
+    begin
+        victim_sel_cnt[victim_sel >> 1] =  victim_sel_cnt[victim_sel >> 1] + 1;
         cache_miss_cnt = cache_miss_cnt + 1;
+    end
+    
+    if (S == Idle && (p_strobe_i || p_flush_i))
+    begin
+        hit_cycle = 1;
+        miss_cycle = 1;
+    end
+    else if (!busy_flushing_o && !p_is_amo_i && cache_hit)
+        hit_cycle = 0;
+    else if (S == RdfromMemFinish)
+        miss_cycle = 0;
+    
+    if (hit_cycle)
+        hit_latency_sum = hit_latency_sum + 1;
+    if (miss_cycle)
+        miss_latency_sum = miss_latency_sum + 1;
 end
 
 always @(*)

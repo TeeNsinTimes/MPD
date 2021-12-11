@@ -339,9 +339,9 @@ always @(posedge clk)
 begin
     if (rst)
         axi_wvalid <= 0;
-    else if (axi_wready & ~axi_wvalid)
+    else if (dev_strobe & spi_sel & dev_we)
         axi_wvalid <= 1;
-    else if (axi_wvalid)
+    else if (axi_wready & axi_wvalid)
         axi_wvalid <= 0;
     else
         axi_wvalid <= axi_wvalid;
@@ -349,16 +349,6 @@ end
 
 assign axi_wdata = {XLEN{1'b0}};     // write data from Aquila.
 assign axi_wstrb = {(XLEN/8){1'b0}}; // byte-select for write operations.
-
-always @(posedge clk)
-begin
-    if (rst)
-        spi_wdata <= {XLEN{1'b0}};
-    else if (axi_wready)
-        spi_wdata <= axi_wdata;
-    else
-        spi_wdata <= spi_wdata;
-end
 
 // ----------------------------
 //  Write Response (B) Channel (INCOMPLETE)
@@ -373,16 +363,6 @@ begin
         axi_bready <= 0;
     else
         axi_bready <= axi_bready;
-end
-
-always @(posedge clk)
-begin
-    if (rst)
-        spi_wdata <= {XLEN{1'b0}};
-    else if (axi_bvalid)
-        spi_wdata <= axi_bresp;
-    else
-        spi_wdata <= spi_wdata;
 end
 
 // ----------------------

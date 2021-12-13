@@ -40,3 +40,6 @@ This is for long file name testing 2.
 
 **所以首先要有方法取得正確的短檔名**
 1. python版本的很簡單，網路上很容易就找到可用的
+2. c版本的就很難找，找到的大都不能用，get_8_3.c是我好不容易找到可用的，但也不是直接能用，還是有做一些修改
+3. get_8_3.c可以取得正確的短檔(路徑)名，testlong1.txt和testlong2.txt分別為TESTLO~1.TXT及TESTLO~2.TXT
+4. 根據短檔名，手動修改fat32.c

@@ -1,7 +1,7 @@
 # About HW4
 **Notes:** https://hackmd.io/etVscIRjQ3aSW3JlQKYs9A?view##HW4
 
-**github:** https://github.com/TeeNsinTimes/MPD/blob/main/HW4/README.md
+**在 github 上閱讀:** https://github.com/TeeNsinTimes/MPD/blob/main/HW4/README.md
 
 ## About read_text
 

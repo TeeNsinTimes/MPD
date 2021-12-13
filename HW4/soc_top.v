@@ -350,16 +350,6 @@ end
 assign axi_wdata = dev_din;
 assign axi_wstrb = dev_be;
 
-always @(posedge clk)
-begin
-    if (rst)
-        spi_rdata <= {XLEN{1'b0}};
-    else if (axi_rvalid)
-        spi_rdata <= axi_rdata;
-    else
-        spi_rdata <= spi_rdata;
-end
-
 // ----------------------------
 //  Write Response (B) Channel (INCOMPLETE)
 // ----------------------------

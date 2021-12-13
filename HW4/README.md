@@ -41,11 +41,12 @@ This is for long file name testing 2.
 **所以首先要有方法取得正確的短檔名(on PC)**
 1. python版本的很簡單，網路上很容易就找到可用的
 2. c版本的就很難找，找到的大都不能用，get_8_3.c是我好不容易找到可用的，但也不是直接能用，還是有做一些修改
-3. get_8_3.c可以取得正確的短檔(路徑)名，testlong1.txt和testlong2.txt分別為TESTLO~1.TXT及TESTLO~2.TXT
+3. get_8_3.c可以取得正確的短檔(路徑)名，testlong1.txt 和 testlong2.txt 分別為 TESTLO~1.TXT 及 TESTLO~2.TXT
 4. 根據短檔名，手動修改fat32.c裡的long2short()，之後生成的ebf file就可以在板子上讀出正確的內容
 
 **然後我試圖把兩件事情合併**
-```//fat32.c - long2short()
+```
+//fat32.c - long2short()
     if (len > 8)
     {
         fname83[6] = '~';
@@ -78,3 +79,14 @@ This is for long file name testing 2.
         else free(szshortpath);
     }
 ```
+
+但因為要多 include 一些 library，所以就變得很複雜
+
+**以下是我嘗試過的方法，以及失敗的原因**
+1. 像elibc裡的library一樣，把用到的檔案一個個複製進去 -> 檔案太多 include 不完
+2. 修改 makefile 讓它可以像我在電腦上編譯 c file 一樣，去找到那些 library -> 好像不可行，不然就是我不會做
+3. 先用 gcc 產生 .bin(參考https://stackoverflow.com/questions/1647359/is-there-a-way-to-get-gcc-to-output-raw-binary)，然後用 create_ebf.sh 把 .bin 變成 .ebf -> 出來的ebf很奇怪(比正常的短很多)
+
+後來我問了助教，他說 include 外部的 library 就是會有這些問題，建議要自己寫，所以我決定放棄了：(
+
+而且助教說有些外部的 library 會依賴作業系統，我這個方法好像確實只能在 Windows 上運行

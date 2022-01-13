@@ -1,0 +1,485 @@
+Archive member included to satisfy reference by file (symbol)
+
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                              ./build/FreeRTOS/tasks.o (__clzsi2)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+                              ./build/lib/stdio.o (__adddf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+                              ./build/lib/stdio.o (__ltdf2)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                              ./build/lib/stdio.o (__muldf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+                              ./build/lib/stdio.o (__subdf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+                              ./build/lib/stdio.o (__fixdfsi)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+                              ./build/lib/stdio.o (__floatsidf)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+                              /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o) (__clz_tab)
+
+Allocating common symbols
+Common symbol       size              file
+
+p                   0x4               ./build/app/rtos_test.o
+j                   0x4               ./build/app/rtos_test.o
+k                   0x4               ./build/app/rtos_test.o
+xQueueRegistry      0x40              ./build/FreeRTOS/queue.o
+xMutex              0x4               ./build/app/rtos_test.o
+a                   0x544             ./build/app/rtos_test.o
+q                   0x4               ./build/app/rtos_test.o
+sp_store            0x4               ./build/lib/crt0.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+code_ram         0x0000000080000000 0x0000000001000000 xr !rw
+data_ram         0x0000000081000000 0x0000000006000000 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ./build/app/rtos_test.o
+LOAD ./build/lib/crt0.o
+LOAD ./build/lib/stdio.o
+LOAD ./build/lib/stdlib.o
+LOAD ./build/lib/string.o
+LOAD ./build/lib/uart.o
+LOAD ./build/FreeRTOS/list.o
+LOAD ./build/FreeRTOS/queue.o
+LOAD ./build/FreeRTOS/tasks.o
+LOAD ./build/FreeRTOS/heap_3.o
+LOAD ./build/FreeRTOS/timers.o
+LOAD ./build/FreeRTOS/port.o
+LOAD ./build/FreeRTOS/portASM.o
+LOAD /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a
+START GROUP
+LOAD /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libgloss.a
+END GROUP
+LOAD /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a
+                0x0000000000000800                __stack_size = 0x800
+                0x0000000004000000                __heap_size = 0x4000000
+                0x0000000085000eb0                __heap_start = (__stack_top + __heap_size)
+
+.text           0x0000000080000000     0x7c28
+ *(.text)
+ .text          0x0000000080000000      0x3d0 ./build/app/rtos_test.o
+                0x0000000080000000                Task2_Handler
+                0x000000008000012c                Task1_Handler
+                0x000000008000031c                vPrintString
+                0x0000000080000350                vPrintNumber
+                0x0000000080000384                pi
+                0x0000000080000390                vApplicationMallocFailedHook
+                0x0000000080000398                vApplicationIdleHook
+                0x000000008000039c                vApplicationStackOverflowHook
+                0x00000000800003b8                vApplicationTickHook
+                0x00000000800003bc                vAssertCalled
+                0x00000000800003cc                vExternalISR
+ .text          0x00000000800003d0       0x30 ./build/lib/crt0.o
+                0x00000000800003d0                crt0
+ .text          0x0000000080000400      0x758 ./build/lib/stdio.o
+                0x0000000080000400                getchar
+                0x0000000080000418                putchar
+                0x0000000080000444                fputs
+                0x00000000800004c4                fgets
+                0x0000000080000588                putd
+                0x0000000080000650                putx
+                0x000000008000072c                putf
+                0x00000000800008d0                printf
+ .text          0x0000000080000b58      0x2e8 ./build/lib/stdlib.o
+                0x0000000080000b58                exit
+                0x0000000080000bac                srand
+                0x0000000080000bb8                rand
+                0x0000000080000be8                malloc
+                0x0000000080000d18                free
+                0x0000000080000d44                calloc
+                0x0000000080000d88                atoi
+                0x0000000080000e30                abs
+ .text          0x0000000080000e40      0x4d0 ./build/lib/string.o
+                0x0000000080000e40                strcpy
+                0x0000000080000ec0                strcmp
+                0x0000000080000f60                strncpy
+                0x0000000080001020                strncmp
+                0x00000000800010f4                memcpy
+                0x00000000800011b4                memmove
+                0x0000000080001228                memset
+                0x0000000080001248                strlen
+                0x0000000080001278                strcat
+                0x00000000800012bc                strncat
+ .text          0x0000000080001310       0x58 ./build/lib/uart.o
+                0x0000000080001310                inbyte
+                0x000000008000132c                outbyte
+ .text          0x0000000080001368       0xfc ./build/FreeRTOS/list.o
+                0x0000000080001368                vListInitialise
+                0x0000000080001388                vListInitialiseItem
+                0x0000000080001390                vListInsertEnd
+                0x00000000800013c0                vListInsert
+                0x0000000080001414                uxListRemove
+ .text          0x0000000080001464     0x141c ./build/FreeRTOS/queue.o
+                0x000000008000170c                xQueueGenericReset
+                0x00000000800017e0                xQueueGenericCreate
+                0x0000000080001874                xQueueGetMutexHolder
+                0x00000000800018c8                xQueueGetMutexHolderFromISR
+                0x00000000800018f0                xQueueCreateCountingSemaphore
+                0x0000000080001938                xQueueGenericSend
+                0x0000000080001b28                xQueueCreateMutex
+                0x0000000080001b7c                xQueueGiveMutexRecursive
+                0x0000000080001bfc                xQueueGenericSendFromISR
+                0x0000000080001d24                xQueueGiveFromISR
+                0x0000000080001e0c                xQueueReceive
+                0x0000000080001fc8                xQueueSemaphoreTake
+                0x00000000800021f0                xQueueTakeMutexRecursive
+                0x0000000080002284                xQueuePeek
+                0x0000000080002430                xQueueReceiveFromISR
+                0x0000000080002530                xQueuePeekFromISR
+                0x00000000800025b4                uxQueueMessagesWaiting
+                0x00000000800025f4                uxQueueSpacesAvailable
+                0x000000008000263c                uxQueueMessagesWaitingFromISR
+                0x0000000080002654                vQueueDelete
+                0x000000008000268c                xQueueIsQueueEmptyFromISR
+                0x00000000800026a8                xQueueIsQueueFullFromISR
+                0x00000000800026cc                vQueueAddToRegistry
+                0x0000000080002774                pcQueueGetName
+                0x00000000800027c4                vQueueUnregisterQueue
+                0x00000000800027d8                vQueueWaitForMessageRestricted
+ .text          0x0000000080002880     0x2dd4 ./build/FreeRTOS/tasks.o
+                0x0000000080002c54                xTaskCreate
+                0x0000000080002f94                vTaskDelete
+                0x0000000080003124                eTaskGetState
+                0x0000000080003220                uxTaskPriorityGet
+                0x0000000080003294                uxTaskPriorityGetFromISR
+                0x00000000800032b0                vTaskPrioritySet
+                0x0000000080003498                vTaskSuspend
+                0x0000000080003680                vTaskResume
+                0x00000000800037c4                xTaskResumeFromISR
+                0x00000000800038e0                vTaskStartScheduler
+                0x000000008000398c                vTaskEndScheduler
+                0x000000008000399c                vTaskSuspendAll
+                0x00000000800039b0                xTaskGetTickCount
+                0x00000000800039bc                xTaskGetTickCountFromISR
+                0x00000000800039c8                uxTaskGetNumberOfTasks
+                0x00000000800039d4                pcTaskGetName
+                0x00000000800039f8                xTaskIncrementTick
+                0x0000000080003e84                xTaskResumeAll
+                0x0000000080003ea0                xTaskDelayUntil
+                0x0000000080003f6c                vTaskDelay
+                0x0000000080003fe0                xTaskGetHandle
+                0x00000000800040fc                xTaskCatchUpTicks
+                0x0000000080004148                xTaskAbortDelay
+                0x00000000800042a8                vTaskSwitchContext
+                0x00000000800042c8                vTaskPlaceOnEventList
+                0x0000000080004310                vTaskPlaceOnUnorderedEventList
+                0x00000000800043a4                vTaskPlaceOnEventListRestricted
+                0x0000000080004418                xTaskRemoveFromEventList
+                0x0000000080004578                vTaskRemoveFromUnorderedEventList
+                0x00000000800046a4                vTaskSetTimeOutState
+                0x0000000080004734                vTaskInternalSetTimeOutState
+                0x0000000080004750                xTaskCheckForTimeOut
+                0x0000000080004860                vTaskMissedYield
+                0x0000000080004870                xTaskGetCurrentTaskHandle
+                0x000000008000487c                xTaskGetSchedulerState
+                0x00000000800048a0                xTaskPriorityInherit
+                0x0000000080004a20                xTaskPriorityDisinherit
+                0x0000000080004b48                vTaskPriorityDisinheritAfterTimeout
+                0x0000000080004c9c                vTaskEnterCritical
+                0x0000000080004cb4                vTaskExitCritical
+                0x0000000080004cd8                uxTaskResetEventItemValue
+                0x0000000080004d00                pvTaskIncrementMutexHeldCount
+                0x0000000080004d24                ulTaskGenericNotifyTake
+                0x0000000080004e38                xTaskGenericNotifyWait
+                0x0000000080004fa0                xTaskGenericNotify
+                0x00000000800051a4                xTaskGenericNotifyFromISR
+                0x0000000080005388                vTaskGenericNotifyGiveFromISR
+                0x00000000800054f8                xTaskGenericNotifyStateClear
+                0x00000000800055b0                ulTaskGenericNotifyValueClear
+ .text          0x0000000080005654       0x88 ./build/FreeRTOS/heap_3.o
+                0x0000000080005654                pvPortMalloc
+                0x00000000800056a8                vPortFree
+ .text          0x00000000800056dc      0x8dc ./build/FreeRTOS/timers.o
+                0x0000000080005b68                xTimerCreateTimerTask
+                0x0000000080005bc4                xTimerCreate
+                0x0000000080005c70                xTimerGenericCommand
+                0x0000000080005d34                xTimerGetTimerDaemonTaskHandle
+                0x0000000080005d50                xTimerGetPeriod
+                0x0000000080005d68                vTimerSetReloadMode
+                0x0000000080005dd4                uxTimerGetReloadMode
+                0x0000000080005e1c                xTimerGetExpiryTime
+                0x0000000080005e34                pcTimerGetName
+                0x0000000080005e4c                xTimerIsTimerActive
+                0x0000000080005e90                pvTimerGetTimerID
+                0x0000000080005ed0                vTimerSetTimerID
+                0x0000000080005f14                xTimerPendFunctionCallFromISR
+                0x0000000080005f58                xTimerPendFunctionCall
+ .text          0x0000000080005fb8       0xe0 ./build/FreeRTOS/port.o
+                0x0000000080005fb8                vPortSetupTimerInterrupt
+                0x0000000080006028                xPortStartScheduler
+                0x0000000080006094                vPortEndScheduler
+ *fill*         0x0000000080006098       0x68 
+ .text          0x0000000080006100      0x384 ./build/FreeRTOS/portASM.o
+                0x0000000080006100                freertos_risc_v_trap_handler
+                0x0000000080006300                xPortStartFirstTask
+                0x0000000080006400                pxPortInitialiseStack
+ .text          0x0000000080006484       0x4c /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                0x0000000080006484                __clzsi2
+ .text          0x00000000800064d0      0x7c0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+                0x00000000800064d0                __adddf3
+ .text          0x0000000080006c90       0xe8 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+                0x0000000080006c90                __ltdf2
+                0x0000000080006c90                __ledf2
+ .text          0x0000000080006d78      0x5c0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                0x0000000080006d78                __muldf3
+ .text          0x0000000080007338      0x7c4 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+                0x0000000080007338                __subdf3
+ .text          0x0000000080007afc       0x80 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+                0x0000000080007afc                __fixdfsi
+ .text          0x0000000080007b7c       0xac /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+                0x0000000080007b7c                __floatsidf
+ .text          0x0000000080007c28        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.text.startup   0x0000000080007c28       0x78
+ .text.startup  0x0000000080007c28       0x78 ./build/app/rtos_test.o
+                0x0000000080007c28                main
+
+.srodata.cst8   0x0000000080007ca0        0x8
+ .srodata.cst8  0x0000000080007ca0        0x8 ./build/lib/stdio.o
+
+.srodata        0x0000000080007ca8       0x14
+ .srodata       0x0000000080007ca8        0x8 ./build/lib/stdlib.o
+ .srodata       0x0000000080007cb0        0xc ./build/FreeRTOS/port.o
+                0x0000000080007cb0                ullMachineTimerCompareRegisterBase
+                0x0000000080007cb4                uxTimerIncrementsForOneTick
+                0x0000000080007cb8                xISRStackTop
+
+.rela.dyn       0x0000000080007cbc        0x0
+ .rela.text     0x0000000080007cbc        0x0 ./build/app/rtos_test.o
+ .rela.text.startup
+                0x0000000080007cbc        0x0 ./build/app/rtos_test.o
+ .rela.sdata    0x0000000080007cbc        0x0 ./build/app/rtos_test.o
+ .rela.srodata  0x0000000080007cbc        0x0 ./build/app/rtos_test.o
+
+.data           0x0000000081000000      0x604
+ *(.data)
+ .data          0x0000000081000000        0x0 ./build/app/rtos_test.o
+ .data          0x0000000081000000        0x0 ./build/lib/crt0.o
+ .data          0x0000000081000000        0x0 ./build/lib/stdio.o
+ .data          0x0000000081000000        0x0 ./build/lib/stdlib.o
+ .data          0x0000000081000000        0x0 ./build/lib/string.o
+ .data          0x0000000081000000        0x0 ./build/lib/uart.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/list.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/queue.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/tasks.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/heap_3.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/timers.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/port.o
+ .data          0x0000000081000000        0x0 ./build/FreeRTOS/portASM.o
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .data          0x0000000081000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ *(.bss)
+ .bss           0x0000000081000000        0x0 ./build/app/rtos_test.o
+ .bss           0x0000000081000000        0x0 ./build/lib/crt0.o
+ .bss           0x0000000081000000        0x0 ./build/lib/stdio.o
+ .bss           0x0000000081000000        0x0 ./build/lib/stdlib.o
+ .bss           0x0000000081000000        0x0 ./build/lib/string.o
+ .bss           0x0000000081000000        0x0 ./build/lib/uart.o
+ .bss           0x0000000081000000        0x0 ./build/FreeRTOS/list.o
+ .bss           0x0000000081000000        0x0 ./build/FreeRTOS/queue.o
+ .bss           0x0000000081000000       0xf0 ./build/FreeRTOS/tasks.o
+ .bss           0x00000000810000f0        0x0 ./build/FreeRTOS/heap_3.o
+ .bss           0x00000000810000f0       0x28 ./build/FreeRTOS/timers.o
+ .bss           0x0000000081000118        0x0 ./build/FreeRTOS/port.o
+ .bss           0x0000000081000118        0x0 ./build/FreeRTOS/portASM.o
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .bss           0x0000000081000118        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ *(.rodata*)
+ .rodata.str1.4
+                0x0000000081000118      0x177 ./build/app/rtos_test.o
+ *fill*         0x000000008100028f        0x1 
+ .rodata        0x0000000081000290       0x84 ./build/lib/stdio.o
+ .rodata.str1.4
+                0x0000000081000314       0x7d ./build/lib/stdio.o
+ *fill*         0x0000000081000391        0x3 
+ .rodata        0x0000000081000394       0xcc ./build/lib/stdlib.o
+ .rodata        0x0000000081000460       0x28 ./build/FreeRTOS/tasks.o
+ .rodata.str1.4
+                0x0000000081000488        0x5 ./build/FreeRTOS/tasks.o
+ *fill*         0x000000008100048d        0x3 
+ .rodata        0x0000000081000490       0x28 ./build/FreeRTOS/timers.o
+ .rodata.str1.4
+                0x00000000810004b8       0x10 ./build/FreeRTOS/timers.o
+ .rodata        0x00000000810004c8       0x3c /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .rodata        0x0000000081000504      0x100 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+                0x0000000081000504                __clz_tab
+
+.sdata          0x0000000081000604       0x38
+ .sdata         0x0000000081000604        0x4 ./build/app/rtos_test.o
+                0x0000000081000604                t
+ .sdata         0x0000000081000608        0x4 ./build/lib/crt0.o
+                0x0000000081000608                stack_top
+ .sdata         0x000000008100060c       0x1c ./build/lib/stdio.o
+                0x000000008100060c                stderr
+                0x0000000081000610                stdout
+                0x0000000081000614                stdin
+ .sdata         0x0000000081000628        0xc ./build/lib/stdlib.o
+ .sdata         0x0000000081000634        0x4 ./build/FreeRTOS/tasks.o
+                0x0000000081000634                uxTopUsedPriority
+ .sdata         0x0000000081000638        0x4 ./build/FreeRTOS/port.o
+                0x0000000081000638                pullNextTime
+
+.sbss           0x0000000081000640       0x70
+ .sbss          0x0000000081000640        0x8 ./build/app/rtos_test.o
+                0x0000000081000640                task2_finished
+                0x0000000081000644                shared_counter
+ .sbss          0x0000000081000648        0x8 ./build/lib/stdio.o
+ .sbss          0x0000000081000650       0x3c ./build/FreeRTOS/tasks.o
+                0x0000000081000688                pxCurrentTCB
+ .sbss          0x000000008100068c       0x14 ./build/FreeRTOS/timers.o
+ .sbss          0x00000000810006a0       0x10 ./build/FreeRTOS/port.o
+                0x00000000810006a0                pullMachineTimerCompareRegister
+                0x00000000810006a8                ullNextTime
+
+.stack          0x00000000810006b0      0x800
+                0x0000000081000eb0                . = (. + __stack_size)
+ *fill*         0x00000000810006b0      0x800 
+                0x0000000081000eb0                __stack_top = .
+                0x0000000081000eb0                __freertos_irq_stack_top = .
+OUTPUT(rtos_test.elf elf32-littleriscv)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 ./build/app/rtos_test.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 ./build/lib/crt0.o
+ .comment       0x0000000000000011       0x12 ./build/lib/stdio.o
+ .comment       0x0000000000000011       0x12 ./build/lib/stdlib.o
+ .comment       0x0000000000000011       0x12 ./build/lib/string.o
+ .comment       0x0000000000000011       0x12 ./build/lib/uart.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/list.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/queue.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/tasks.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/heap_3.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/timers.o
+ .comment       0x0000000000000011       0x12 ./build/FreeRTOS/port.o
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .comment       0x0000000000000011       0x12 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.bss            0x0000000081000eb0      0x59c
+ COMMON         0x0000000081000eb0      0x558 ./build/app/rtos_test.o
+                0x0000000081000eb0                p
+                0x0000000081000eb4                j
+                0x0000000081000eb8                k
+                0x0000000081000ebc                xMutex
+                0x0000000081000ec0                a
+                0x0000000081001404                q
+ COMMON         0x0000000081001408        0x4 ./build/lib/crt0.o
+                0x0000000081001408                sp_store
+ COMMON         0x000000008100140c       0x40 ./build/FreeRTOS/queue.o
+                0x000000008100140c                xQueueRegistry
+
+.debug_info     0x0000000000000000     0x30f4
+ .debug_info    0x0000000000000000      0xbac /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_info    0x0000000000000bac      0x5a5 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_info    0x0000000000001151      0x284 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_info    0x00000000000013d5      0x768 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_info    0x0000000000001b3d      0x5a5 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_info    0x00000000000020e2      0x217 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_info    0x00000000000022f9      0x2bc /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .debug_info    0x00000000000025b5      0xb3f /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.debug_abbrev   0x0000000000000000      0xd6e
+ .debug_abbrev  0x0000000000000000      0x242 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x0000000000000242      0x196 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_abbrev  0x00000000000003d8      0x188 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_abbrev  0x0000000000000560      0x18e /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_abbrev  0x00000000000006ee      0x196 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_abbrev  0x0000000000000884      0x18a /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_abbrev  0x0000000000000a0e      0x178 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .debug_abbrev  0x0000000000000b86      0x1e8 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.debug_loc      0x0000000000000000     0x35fe
+ .debug_loc     0x0000000000000000       0x6b /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_loc     0x000000000000006b     0x1207 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_loc     0x0000000000001272       0xec /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_loc     0x000000000000135e      0xdc4 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_loc     0x0000000000002122     0x1221 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_loc     0x0000000000003343      0x16d /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_loc     0x00000000000034b0      0x14e /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+
+.debug_aranges  0x0000000000000000       0xf8
+ .debug_aranges
+                0x0000000000000000       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_aranges
+                0x0000000000000060       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_aranges
+                0x0000000000000080       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_aranges
+                0x00000000000000c0       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .debug_aranges
+                0x00000000000000e0       0x18 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.debug_ranges   0x0000000000000000      0x6e8
+ .debug_ranges  0x0000000000000000       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_ranges  0x0000000000000020      0x210 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_ranges  0x0000000000000230       0x68 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_ranges  0x0000000000000298      0x1e8 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_ranges  0x0000000000000480      0x1e8 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_ranges  0x0000000000000668       0x18 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_ranges  0x0000000000000680       0x68 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+
+.debug_line     0x0000000000000000     0x35aa
+ .debug_line    0x0000000000000000      0x265 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_line    0x0000000000000265      0xef2 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_line    0x0000000000001157      0x2f5 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_line    0x000000000000144c      0xc0a /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_line    0x0000000000002056      0xf2f /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_line    0x0000000000002f85      0x219 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_line    0x000000000000319e      0x229 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+ .debug_line    0x00000000000033c7      0x1e3 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.debug_str      0x0000000000000000      0xc20
+ .debug_str     0x0000000000000000      0x6f9 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                                        0x772 (size before relaxing)
+ .debug_str     0x00000000000006f9      0x190 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+                                        0x31a (size before relaxing)
+ .debug_str     0x0000000000000889       0x77 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+                                        0x258 (size before relaxing)
+ .debug_str     0x0000000000000900      0x236 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                                        0x434 (size before relaxing)
+ .debug_str     0x0000000000000b36       0x36 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+                                        0x31a (size before relaxing)
+ .debug_str     0x0000000000000b6c       0x4b /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+                                        0x231 (size before relaxing)
+ .debug_str     0x0000000000000bb7       0x69 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)
+                                        0x2c7 (size before relaxing)
+ .debug_str     0x0000000000000c20      0x755 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+
+.debug_frame    0x0000000000000000      0x174
+ .debug_frame   0x0000000000000000       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .debug_frame   0x0000000000000020       0x44 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(adddf3.o)
+ .debug_frame   0x0000000000000064       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(ledf2.o)
+ .debug_frame   0x0000000000000084       0x54 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_frame   0x00000000000000d8       0x44 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subdf3.o)
+ .debug_frame   0x000000000000011c       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixdfsi.o)
+ .debug_frame   0x000000000000013c       0x38 /opt/riscv/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsidf.o)

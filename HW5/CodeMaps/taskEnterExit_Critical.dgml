@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="#defineMtCOVERAGE_TEST_MARKER()" Category="CodeSchema_Event" Bounds="293.8225,1662.4475,254.543333333333,25.2399999999998" Label="#define mtCOVERAGE_TEST_MARKER()" />
+    <Node Id="#definePdFALSE((BaseType_t)0)" Category="CodeSchema_Event" Bounds="861.26,1690.0675,332.536666666667,25.2399999999998" Label="#define pdFALSE                                  ( ( BaseType_t ) 0 )" />
+    <Node Id="#definePortASSERT_IF_IN_ISR()" Category="CodeSchema_Event" Bounds="578.954166666666,1662.4475,212.280000000001,25.2399999999998" Label="#define portASSERT_IF_IN_ISR()" />
+    <Node Id="#definePortBASE_TYPEInt32_t" Category="CodeSchema_Event" Bounds="1535.37,2000.095,208.14,25.2399999999998" Label="#define portBASE_TYPE int32_t" />
+    <Node Id="#definePortDISABLE_INTERRUPTS()__asmVolatile(&quot;csrcMstatus,8&quot;)" Category="CodeSchema_Event" Bounds="1435.83333333333,1827.9275,423.39,25.2399999999998" Label="#define portDISABLE_INTERRUPTS() __asm volatile( &quot;csrc mstatus, 8&quot; )" />
+    <Node Id="#definePortENABLE_INTERRUPTS()__asmVolatile(&quot;csrsMstatus,8&quot;)" Category="CodeSchema_Event" Bounds="1435.83333333333,1772.6875,422.76,25.2399999999998" Label="#define portENABLE_INTERRUPTS()  __asm volatile( &quot;csrs mstatus, 8&quot; )" />
+    <Node Id="#definePortUBASE_TYPEUint32_t" Category="CodeSchema_Event" Bounds="1535.37,1944.855,224.316666666667,25.2400000000002" Label="#define portUBASE_TYPE uint32_t" />
+    <Node Id="62100b95-fd18-43d0-87d0-1467246d38f1" Bounds="273.8225,1622.4475,537.411666666667,140.48" Group="Expanded" Label="FreeRTOS.h" />
+    <Node Id="6a5da92f-eaef-4fd9-91d1-551d596ed7041" Category="CodeSchema_Event" Bounds="1321.49041666667,300.96,246.97,25.24" Label="( pxCurrentTCB-&gt;uxCriticalNesting )--" />
+    <Node Id="77ae4fad-09a4-4e88-98c2-e79cf7db33511" Category="Comment" Bounds="1909.22333333333,0,249.11,131.92" Label="This is not the interrupt safe version of the enter critical function so  assert() if it is being called from an interrupt context.  Only API functions that end in &quot;FromISR&quot; can be used in an interrupt.  Only assert if the critical nesting count is 1 to protect against recursive calls if the assert function also uses a critical section." />
+    <Node Id="@1" Category="CodeSchema_Event" Bounds="784.01125,273.34,254.303333333333,25.24" Label="( pxCurrentTCB-&gt;uxCriticalNesting )++" />
+    <Node Id="@4" Category="CodeSchema_TypeDef" Bounds="1490.24666666667,1662.4475,124.22,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="BaseType_t" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" NativeProvider_Type="portBASE_TYPE" NativeProvider_TypeName="BaseType_t" />
+    <Node Id="@5" Category="CodeSchema_TypeDef" Bounds="1494.685,1552.2075,133.096666666666,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="UBaseType_t" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" NativeProvider_Type="portUBASE_TYPE" NativeProvider_TypeName="UBaseType_t" />
+    <Node Id="CharPcTaskName[ConfigMAX_TASK_NAME_LEN]" Category="CodeSchema_Field" Bounds="999.79125,1083.84,317.753333333333,25.2399999999998" Label="char pcTaskName[ configMAX_TASK_NAME_LEN ]" />
+    <Node Id="ClearBitsInCSR" Category="CodeSchema_Event" Bounds="1336.53,1962.475,147.996666666667,25.2399999999998" Label="Clear bits in mstatus" />
+    <Node Id="Do_nothing" Category="CodeSchema_Event" Bounds="635.2925,1717.6875,99.603333333333,25.2399999999998" Label="do_nothing" />
+    <Node Id="Https://cryptography.gmu.edu:4443/XBX/FreeRTOS/commit/0cd5e3799e6f567bbe5691050ad3da572569131c" Category="Comment" Bounds="419.153333333333,1931.995,246.75,86.1999999999998" Label="https://asf.microchip.com/docs/latest/common.services.freertos_sam_usart.unit_tests.sam3x_ek/html/_free_r_t_o_s_8h.html#a24a48f166f347e5201a72efcc73d0202" />
+    <Node Id="If(PxCurrentTCB-&gt;uxCriticalNesting==0U)" Category="CodeSchema_Event" Bounds="1322.35375,356.2,283.243333333333,25.24" Label="if( pxCurrentTCB-&gt;uxCriticalNesting == 0U )" />
+    <Node Id="If(PxCurrentTCB-&gt;uxCriticalNesting==1)" Category="CodeSchema_Event" Bounds="773.979583333334,328.58,274.366666666667,25.24" Label="if( pxCurrentTCB-&gt;uxCriticalNesting == 1 )" />
+    <Node Id="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Category="CodeSchema_Event" Bounds="1265.77708333333,190.48,274.396666666667,25.24" Label="if( pxCurrentTCB-&gt;uxCriticalNesting &gt; 0U )" />
+    <Node Id="If(XSchedulerRunning!=PdFALSE)" Category="CodeSchema_Event" Bounds="794.811250000001,162.86,232.703333333333,25.24" Label="if( xSchedulerRunning != pdFALSE )" />
+    <Node Id="If(XSchedulerRunning!=PdFALSE)1" Category="CodeSchema_Event" Bounds="1118.62375,80,232.703333333333,25.24" Label="if( xSchedulerRunning != pdFALSE )" />
+    <Node Id="ListItem_tXEventListItem" Category="CodeSchema_Field" Bounds="1070.67125,918.119999999999,175.993333333333,25.24" Label="ListItem_t xEventListItem" />
+    <Node Id="ListItem_tXStateListItem" Category="CodeSchema_Field" Bounds="1071.77291666667,862.879999999999,173.79,25.24" Label="ListItem_t xStateListItem" />
+    <Node Id="MtCOVERAGE_TEST_MARKER()" Category="CodeSchema_Event" Bounds="544.989583333333,273.34,208.346666666667,25.24" Label="mtCOVERAGE_TEST_MARKER()" />
+    <Node Id="MtCOVERAGE_TEST_MARKER()1" Category="CodeSchema_Event" Bounds="1186.80208333333,466.68,208.346666666667,25.24" Label="mtCOVERAGE_TEST_MARKER()" />
+    <Node Id="N" Category="Comment" Bounds="805.162916666667,218.1,50,25.24" Label="N" />
+    <Node Id="N1" Category="Comment" Bounds="1209.97541666667,411.44,50,25.24" Label="N" />
+    <Node Id="N2" Category="Comment" Bounds="1265.97541666667,245.72,50,25.24" Label="N" />
+    <Node Id="N3" Category="Comment" Bounds="1357.97541666667,411.44,50,25.24" Label="N" />
+    <Node Id="OtherFilePrivateVariables." Bounds="422.344583333334,541.92,498.646666666667,85.24" Group="Expanded" Label="Other file private variables" />
+    <Node Id="PRIVILEGED_DATAStaticVolatileBaseType_tXSchedulerRunning=PdFALSE" Category="CodeSchema_Event" Bounds="442.344583333334,581.92,458.646666666667,25.24" Label="PRIVILEGED_DATA static volatile BaseType_t xSchedulerRunning = pdFALSE" />
+    <Node Id="PRIVILEGED_DATATCB_t*VolatilePxCurrentTCB=NULL" Category="CodeSchema_Event" Bounds="982.254583333334,571.92,352.826666666667,25.24" Label="PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL" />
+    <Node Id="PortASSERT_IF_IN_ISR()" Category="CodeSchema_Event" Bounds="828.12125,439.06,166.083333333333,25.24" Label="portASSERT_IF_IN_ISR()" />
+    <Node Id="PortDISABLE_INTERRUPTS()" Category="CodeSchema_Event" Bounds="815.859583333333,107.62,190.606666666667,25.24" Label="portDISABLE_INTERRUPTS()" />
+    <Node Id="PortENABLE_INTERRUPTS()" Category="CodeSchema_Event" Bounds="1425.23875,466.68,187.473333333333,25.24" Label="portENABLE_INTERRUPTS()" />
+    <Node Id="Portmacro.h" Bounds="1415.83333333333,1512.2075,463.39,360.959999999999" Group="Expanded" Label="portmacro.h" />
+    <Node Id="Projdefs.h" Bounds="841.26,1650.0675,372.536666666667,85.2399999999998" Group="Expanded" Label="projdefs.h" />
+    <Node Id="RISC-V" Bounds="1515.37,1904.855,264.316666666667,140.48" Group="Expanded" Label="RISC-V" />
+    <Node Id="Riscv-spec-v2.2.pdf" Category="Comment" Bounds="1243.955,1680.0675,141.146666666667,25.2399999999998" Label="riscv-spec-v2.2, p.111" />
+    <Node Id="StackType_t*PxStack" Category="CodeSchema_Field" Bounds="1079.09458333333,1028.6,159.146666666667,25.2399999999998" Label="StackType_t * pxStack" />
+    <Node Id="Task.c" Bounds="402.344583333334,0,1250.3675,1480.52" Group="Expanded" Label="task.c" />
+    <Node Id="TskTaskControlBlock" Category="CodeSchema_Struct" Bounds="896.494583333333,767.639999999999,524.346666666667,692.879999999998" Group="Expanded" Label="{ }" />
+    <Node Id="TypedefPortBASE_TYPEBaseType_t" Category="CodeSchema_Event" Bounds="1435.83333333333,1717.4475,233.046666666667,25.2399999999998" Label="typedef portBASE_TYPE BaseType_t" />
+    <Node Id="TypedefPortUBASE_TYPEUBaseType_t" Category="CodeSchema_Event" Bounds="1435.83333333333,1607.2075,250.8,25.2399999999998" Label="typedef portUBASE_TYPE UBaseType_t" />
+    <Node Id="TypedefStructTskTaskControlBlock{}TskTCB" Category="CodeSchema_Event" Bounds="1016.21125,712.4,284.913333333333,25.24" Label="typedef struct tskTaskControlBlock { } tskTCB" />
+    <Node Id="TypedefTskTCBTCB_t" Category="CodeSchema_Event" Bounds="1081.67458333333,657.16,153.986666666667,25.24" Label="typedef tskTCB TCB_t" />
+    <Node Id="UBaseType_tUxBasePriority" Category="CodeSchema_Field" Bounds="1062.69291666667,1194.32,191.95,25.2399999999998" Label="UBaseType_t uxBasePriority" />
+    <Node Id="UBaseType_tUxCriticalNesting" Category="CodeSchema_Field" Bounds="1054.54791666667,1139.08,208.24,25.2399999999998" Label="UBaseType_t uxCriticalNesting" />
+    <Node Id="UBaseType_tUxMutexesHeld" Category="CodeSchema_Field" Bounds="1058.66458333333,1249.56,200.006666666667,25.2399999999998" Label="UBaseType_t uxMutexesHeld" />
+    <Node Id="UBaseType_tUxPriority" Category="CodeSchema_Field" Bounds="1075.78125,973.359999999999,165.773333333333,25.24" Label="UBaseType_t uxPriority" />
+    <Node Id="Uint8_tUcDelayAborted" Category="CodeSchema_Field" Bounds="1073.46458333333,1415.28,170.406666666667,25.2399999999998" Label="uint8_t ucDelayAborted" />
+    <Node Id="VTaskEnterCritical(void)" Bounds="524.989583333333,67.6199999999999,543.356666666667,416.68" Group="Expanded" Label="vTaskEnterCritical(void)" />
+    <Node Id="VTaskExitCritical(void)" Bounds="1098.62375,40,534.088333333333,471.92" Group="Expanded" Label="vTaskExitCritical(void)" />
+    <Node Id="VolatileStackType_t*PxTopOfStack" Category="CodeSchema_Field" Bounds="1039.39625,807.639999999999,238.543333333333,25.24" Label="volatile StackType_t * pxTopOfStack" />
+    <Node Id="VolatileUint32_tUlNotifiedValue[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Category="CodeSchema_Field" Bounds="916.494583333333,1304.8,484.346666666667,25.2399999999998" Label="volatile uint32_t ulNotifiedValue[ configTASK_NOTIFICATION_ARRAY_ENTRIES ]" />
+    <Node Id="VolatileUint8_tUcNotifyState[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Category="CodeSchema_Field" Bounds="925.597916666667,1360.04,466.14,25.2399999999998" Label="volatile uint8_t ucNotifyState[ configTASK_NOTIFICATION_ARRAY_ENTRIES ]" />
+    <Node Id="Y" Category="Comment" Bounds="886.162916666667,218.1,50,25.24" Label="Y" />
+    <Node Id="Y1" Category="Comment" Bounds="886.162916666667,383.82,50,25.24" Label="Y" />
+    <Node Id="Y2" Category="Comment" Bounds="1265.97541666667,135.24,50,25.24" Label="Y" />
+    <Node Id="Y3" Category="Comment" Bounds="1377.97541666667,245.72,50,25.24" Label="Y" />
+    <Node Id="Y4" Category="Comment" Bounds="1438.97541666667,411.44,50,25.24" Label="Y" />
+    <Node Id="cbc51f25-c79c-4eb2-8a09-07ac1a7f017d1" Category="Comment" Bounds="0,1664.8275,243.056666666667,55.7199999999998" Label="Holds the critical section nesting depth for ports that do not maintain their own count in the port layer." />
+  </Nodes>
+  <Links>
+    <Link Source="#defineMtCOVERAGE_TEST_MARKER()" Target="Do_nothing" Bounds="481.406982421875,1687.6875,145.17919921875,30.377685546875" />
+    <Link Source="#definePdFALSE((BaseType_t)0)" Target="PRIVILEGED_DATAStaticVolatileBaseType_tXSchedulerRunning=PdFALSE" Bounds="958.966406747197,-608.657171972647,0.990058292027129,567.68121918066" />
+    <Link Source="#definePortASSERT_IF_IN_ISR()" Target="Do_nothing" Bounds="685.094177246094,1687.6875,0,21" />
+    <Link Source="#definePortDISABLE_INTERRUPTS()__asmVolatile(&quot;csrcMstatus,8&quot;)" Target="ClearBitsInCSR" Bounds="1596.54844455274,1761.4134933039,2.76798924356422,96.2440198419345" />
+    <Link Source="#definePortENABLE_INTERRUPTS()__asmVolatile(&quot;csrsMstatus,8&quot;)" Target="ClearBitsInCSR" Bounds="1596.32611428024,1706.11448207343,2.79940401881413,151.540846459326" />
+    <Link Source="62100b95-fd18-43d0-87d0-1467246d38f1" Target="#defineMtCOVERAGE_TEST_MARKER()" Category="Contains" />
+    <Link Source="62100b95-fd18-43d0-87d0-1467246d38f1" Target="#definePortASSERT_IF_IN_ISR()" Category="Contains" />
+    <Link Source="62100b95-fd18-43d0-87d0-1467246d38f1" Target="Do_nothing" Category="Contains" />
+    <Link Source="6a5da92f-eaef-4fd9-91d1-551d596ed7041" Target="If(PxCurrentTCB-&gt;uxCriticalNesting==0U)" Bounds="1449.31616210938,326.200012207031,7.3912353515625,21.4893493652344" />
+    <Link Source="@1" Target="If(PxCurrentTCB-&gt;uxCriticalNesting==1)" Bounds="911.162902832031,298.579986572266,0,21" />
+    <Link Source="@1" Target="PRIVILEGED_DATATCB_t*VolatilePxCurrentTCB=NULL" Bounds="873.458825354373,270.959996337891,509.223643493567,241.85877266024" />
+    <Link Source="@1" Target="UBaseType_tUxCriticalNesting" Bounds="852.412790947284,270.959479096975,548.250342038723,805.441087303897" />
+    <Link Source="@4" Target="TypedefPortBASE_TYPEBaseType_t" Bounds="1552.35668945313,1687.44750976563,0,21" />
+    <Link Source="@5" Target="TypedefPortUBASE_TYPEUBaseType_t" Bounds="1561.23327636719,1577.20751953125,0,21" />
+    <Link Source="CharPcTaskName[ConfigMAX_TASK_NAME_LEN]" Target="UBaseType_tUxCriticalNesting" Bounds="1158.66796875,1109.07995605469,0,21" />
+    <Link Source="Do_nothing" Target="Https://cryptography.gmu.edu:4443/XBX/FreeRTOS/commit/0cd5e3799e6f567bbe5691050ad3da572569131c" Bounds="1919.0660698873,1660.06744873047,85.8846163793485,153.592279638865" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting==0U)" Target="N3" Bounds="1408.916015625,381.440002441406,36.5543212890625,24.9291687011719" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting==0U)" Target="Y4" Bounds="1463.97546386719,381.440002441406,0,21" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting==1)" Target="Y1" Bounds="911.162902832031,353.820007324219,0,21" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Target="N2" Bounds="1323.45642089844,215.720001220703,53.9317626953125,26.5998992919922" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Target="PRIVILEGED_DATATCB_t*VolatilePxCurrentTCB=NULL" Bounds="888.449362783871,215.719990844727,971.251232483964,298.317505468278" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Target="UBaseType_tUxCriticalNesting" Bounds="860.648328226793,215.719798363156,1025.13730658553,862.327240532464" />
+    <Link Source="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Target="Y3" Bounds="1402.97546386719,215.720001220703,0,21" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)" Target="#definePdFALSE((BaseType_t)0)" Bounds="955.652808524115,-599.666773110577,7.77977896588868,291.491948281475" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)" Target="N" Bounds="856.103515625,188.100006103516,36.5543212890625,24.9291687011719" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)" Target="PRIVILEGED_DATAStaticVolatileBaseType_tXSchedulerRunning=PdFALSE" Bounds="966.212080245622,-398.176671972647,104.585781512333,357.562634574896" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)" Target="Y" Bounds="911.162902832031,188.100006103516,0,21" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)1" Target="N1" Bounds="1234.97546386719,105.23999786377,0,297.200004577637" />
+    <Link Source="If(XSchedulerRunning!=PdFALSE)1" Target="Y2" Bounds="1247.76904296875,105.23999786377,24.0054931640625,23.6796646118164" />
+    <Link Source="ListItem_tXEventListItem" Target="UBaseType_tUxPriority" Bounds="1158.66796875,943.359985351563,0,21" />
+    <Link Source="ListItem_tXStateListItem" Target="ListItem_tXEventListItem" Bounds="1158.66796875,888.119995117188,0,21" />
+    <Link Source="MtCOVERAGE_TEST_MARKER()" Target="#defineMtCOVERAGE_TEST_MARKER()" Bounds="1280.94514505163,-1811.97198828939,178.825665268924,1390.81154906445" />
+    <Link Source="MtCOVERAGE_TEST_MARKER()1" Target="#defineMtCOVERAGE_TEST_MARKER()" Bounds="719.745130748898,491.919987792969,1056.70941171874,1081.23094032761" />
+    <Link Source="N" Target="MtCOVERAGE_TEST_MARKER()" Bounds="699.121765136719,238.349838256836,106.041137695313,32.3630523681641" />
+    <Link Source="N1" Target="MtCOVERAGE_TEST_MARKER()1" Bounds="1247.76904296875,436.679992675781,24.0054931640625,23.6796875" />
+    <Link Source="N2" Target="MtCOVERAGE_TEST_MARKER()1" Bounds="1290.97546386719,270.959991455078,0,186.720001220703" />
+    <Link Source="N3" Target="MtCOVERAGE_TEST_MARKER()1" Bounds="1319.70947265625,436.679992675781,42.247802734375,25.3670654296875" />
+    <Link Source="OtherFilePrivateVariables." Target="PRIVILEGED_DATAStaticVolatileBaseType_tXSchedulerRunning=PdFALSE" Category="Contains" />
+    <Link Source="PRIVILEGED_DATAStaticVolatileBaseType_tXSchedulerRunning=PdFALSE" Target="@4" Bounds="982.922358593821,-664.074728054721,310.251655266912,934.819684980082" />
+    <Link Source="PRIVILEGED_DATATCB_t*VolatilePxCurrentTCB=NULL" Target="TypedefTskTCBTCB_t" Bounds="1158.66796875,597.159973144531,0,51" />
+    <Link Source="PortASSERT_IF_IN_ISR()" Target="#definePortASSERT_IF_IN_ISR()" Bounds="973.117390112549,436.67978006864,431.337751743145,1134.49513677687" />
+    <Link Source="PortDISABLE_INTERRUPTS()" Target="#definePortDISABLE_INTERRUPTS()__asmVolatile(&quot;csrcMstatus,8&quot;)" Bounds="1226.62604863359,70.3516617365152,368.295690510469,1657.03622148297" />
+    <Link Source="PortDISABLE_INTERRUPTS()" Target="If(XSchedulerRunning!=PdFALSE)" Bounds="911.162902832031,132.860000610352,0,21" />
+    <Link Source="PortENABLE_INTERRUPTS()" Target="#definePortENABLE_INTERRUPTS()__asmVolatile(&quot;csrsMstatus,8&quot;)" Bounds="1520.21463110662,491.919987792969,124.880032376734,1271.81058249725" />
+    <Link Source="Portmacro.h" Target="#definePortDISABLE_INTERRUPTS()__asmVolatile(&quot;csrcMstatus,8&quot;)" Category="Contains" />
+    <Link Source="Portmacro.h" Target="#definePortENABLE_INTERRUPTS()__asmVolatile(&quot;csrsMstatus,8&quot;)" Category="Contains" />
+    <Link Source="Portmacro.h" Target="@4" Category="Contains" />
+    <Link Source="Portmacro.h" Target="@5" Category="Contains" />
+    <Link Source="Portmacro.h" Target="TypedefPortBASE_TYPEBaseType_t" Category="Contains" />
+    <Link Source="Portmacro.h" Target="TypedefPortUBASE_TYPEUBaseType_t" Category="Contains" />
+    <Link Source="Projdefs.h" Target="#definePdFALSE((BaseType_t)0)" Category="Contains" />
+    <Link Source="RISC-V" Target="#definePortBASE_TYPEInt32_t" Category="Contains" />
+    <Link Source="RISC-V" Target="#definePortUBASE_TYPEUint32_t" Category="Contains" />
+    <Link Source="Riscv-spec-v2.2.pdf" Target="ClearBitsInCSR" Bounds="1318.818359375,1705.30749511719,84.5234375,248.646362304688" />
+    <Link Source="StackType_t*PxStack" Target="CharPcTaskName[ConfigMAX_TASK_NAME_LEN]" Bounds="1158.66796875,1053.83996582031,0,21" />
+    <Link Source="Task.c" Target="OtherFilePrivateVariables." Category="Contains" />
+    <Link Source="Task.c" Target="PRIVILEGED_DATATCB_t*VolatilePxCurrentTCB=NULL" Category="Contains" />
+    <Link Source="Task.c" Target="TskTaskControlBlock" Category="Contains" />
+    <Link Source="Task.c" Target="TypedefStructTskTaskControlBlock{}TskTCB" Category="Contains" />
+    <Link Source="Task.c" Target="TypedefTskTCBTCB_t" Category="Contains" />
+    <Link Source="Task.c" Target="VTaskEnterCritical(void)" Category="Contains" />
+    <Link Source="Task.c" Target="VTaskExitCritical(void)" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="CharPcTaskName[ConfigMAX_TASK_NAME_LEN]" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="ListItem_tXEventListItem" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="ListItem_tXStateListItem" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="StackType_t*PxStack" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="UBaseType_tUxBasePriority" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="UBaseType_tUxCriticalNesting" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="UBaseType_tUxMutexesHeld" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="UBaseType_tUxPriority" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="Uint8_tUcDelayAborted" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="VolatileStackType_t*PxTopOfStack" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="VolatileUint32_tUlNotifiedValue[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Category="Contains" />
+    <Link Source="TskTaskControlBlock" Target="VolatileUint8_tUcNotifyState[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Category="Contains" />
+    <Link Source="TypedefPortBASE_TYPEBaseType_t" Target="#definePortBASE_TYPEInt32_t" Bounds="970.682689838525,99.4925111203373,278.349292022946,249.51073638224" />
+    <Link Source="TypedefPortUBASE_TYPEUBaseType_t" Target="#definePortUBASE_TYPEUint32_t" Bounds="979.524064072699,154.732611120337,277.64076480676,249.502362296366" />
+    <Link Source="TypedefStructTskTaskControlBlock{}TskTCB" Target="TskTaskControlBlock" Bounds="1158.66796875,737.640014648438,0,21" />
+    <Link Source="TypedefTskTCBTCB_t" Target="TypedefStructTskTaskControlBlock{}TskTCB" Bounds="1158.66796875,682.400024414063,0,21" />
+    <Link Source="UBaseType_tUxBasePriority" Target="UBaseType_tUxMutexesHeld" Bounds="1158.66796875,1219.56005859375,0,21" />
+    <Link Source="UBaseType_tUxCriticalNesting" Target="@5" Bounds="851.851770847399,1109.08054003447,395.959217004504,381.641023605772" />
+    <Link Source="UBaseType_tUxCriticalNesting" Target="UBaseType_tUxBasePriority" Bounds="1158.66796875,1164.31994628906,0,21" />
+    <Link Source="UBaseType_tUxCriticalNesting" Target="cbc51f25-c79c-4eb2-8a09-07ac1a7f017d1" Bounds="431.117009555704,1109.08054003447,396.893606475419,466.035004763265" />
+    <Link Source="UBaseType_tUxMutexesHeld" Target="VolatileUint32_tUlNotifiedValue[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Bounds="1158.66796875,1274.80004882813,0,21" />
+    <Link Source="UBaseType_tUxPriority" Target="StackType_t*PxStack" Bounds="1158.66796875,998.599975585938,0,21" />
+    <Link Source="VTaskEnterCritical(void)" Target="@1" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="If(PxCurrentTCB-&gt;uxCriticalNesting==1)" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="If(XSchedulerRunning!=PdFALSE)" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="MtCOVERAGE_TEST_MARKER()" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="N" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="PortASSERT_IF_IN_ISR()" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="PortDISABLE_INTERRUPTS()" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="Y" Category="Contains" />
+    <Link Source="VTaskEnterCritical(void)" Target="Y1" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="6a5da92f-eaef-4fd9-91d1-551d596ed7041" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="If(PxCurrentTCB-&gt;uxCriticalNesting==0U)" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="If(XSchedulerRunning!=PdFALSE)1" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="MtCOVERAGE_TEST_MARKER()1" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="N1" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="N2" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="N3" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="PortENABLE_INTERRUPTS()" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="Y2" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="Y3" Category="Contains" />
+    <Link Source="VTaskExitCritical(void)" Target="Y4" Category="Contains" />
+    <Link Source="VolatileStackType_t*PxTopOfStack" Target="ListItem_tXStateListItem" Bounds="1158.66796875,832.880004882813,0,21" />
+    <Link Source="VolatileUint32_tUlNotifiedValue[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Target="VolatileUint8_tUcNotifyState[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Bounds="1158.66796875,1330.0400390625,0,21" />
+    <Link Source="VolatileUint8_tUcNotifyState[ConfigTASK_NOTIFICATION_ARRAY_ENTRIES]" Target="Uint8_tUcDelayAborted" Bounds="1158.66796875,1385.28002929688,0,21" />
+    <Link Source="Y" Target="@1" Bounds="911.162902832031,243.339996337891,0,21" />
+    <Link Source="Y1" Target="PortASSERT_IF_IN_ISR()" Bounds="911.162902832031,409.059997558594,0,21" />
+    <Link Source="Y2" Target="If(PxCurrentTCB-&gt;uxCriticalNesting&gt;0U)" Bounds="1315.384765625,159.899047851563,53.9317626953125,26.5998992919922" />
+    <Link Source="Y3" Target="6a5da92f-eaef-4fd9-91d1-551d596ed7041" Bounds="1412.57067871094,270.959991455078,17.3623046875,22.8356628417969" />
+    <Link Source="Y4" Target="PortENABLE_INTERRUPTS()" Bounds="1476.54052734375,436.679992675781,23.5196533203125,23.6221923828125" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Event" Label="事件" BasedOn="CodeSchema_Field" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Event" NavigationActionLabel="事件" />
+    <Category Id="CodeSchema_Field" Label="字段" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="字段" />
+    <Category Id="CodeSchema_Member" Label="编号" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="成员" />
+    <Category Id="CodeSchema_Struct" Label="结构" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Struct" NavigationActionLabel="结构" />
+    <Category Id="CodeSchema_Type" Label="类型" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="类型" />
+    <Category Id="CodeSchema_TypeDef" Label="Typedef" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" IsProviderRoot="False" NavigationActionLabel="Typedef" />
+    <Category Id="Comment" Label="注释" Description="表示在图表中用户定义的注释" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="注释" />
+    <Category Id="Contains" Label="包含" Description="链接的源是否包含目标对象" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="包含者" IsContainment="True" OutgoingActionLabel="包含" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="是公共的" Description="一个标志，用于指示该范围是“公共”范围" DataType="System.Boolean" />
+    <Property Id="DataVirtualized" Label="已虚拟化数据" Description="如果为 true，则图中可以包含表示虚拟化节点/链接(即，不在图中实际创建)的数据的节点和链接。" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="延迟的子节点状态" Description="如果未指定延迟的子节点状态，则为 Unspecified。如果尚未将组包含的子节点提取到关系图中，则为 NotFetched。如果已提取组内的所有延迟的子节点，则为 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="组" Description="将节点显示为组" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="图标" Description="图标" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
+    <Property Id="Language" Label="语言" Description="语言" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NativeProvider_Type" Label="类型" Description="类型" DataType="System.String" />
+    <Property Id="NativeProvider_TypeName" Label="TypeName" Description="TypeName" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="可见性" Description="定义关系图中的节点是否可见" DataType="System.Windows.Visibility" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="程序集" ValueType="Uri" />
+    <Name Id="Namespace" Label="命名空间" ValueType="System.String" />
+    <Name Id="Type" Label="类型" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Id="(PxCurrentTCB-&gt;uxCriticalNesting)" />
+    <Alias n="2" Uri="Assembly=$(5557f76c-f246-4632-8a26-5a110fade11b.OutputPathUri)" />
+    <Alias n="4" Id="(@2 Namespace=:: Type=BaseType_t)" />
+    <Alias n="5" Id="(@2 Namespace=:: Type=UBaseType_t)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="结果" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="测试项目" ValueLabel="测试项目">
+      <Condition Expression="HasCategory('CodeMap_TestProject')" />
+      <Setter Property="Icon" Value="CodeMap_TestProject" />
+      <Setter Property="Background" Value="#FF307A69" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Web 项目" ValueLabel="Web 项目">
+      <Condition Expression="HasCategory('CodeMap_WebProject')" />
+      <Setter Property="Icon" Value="CodeMap_WebProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Windows 应用商店项目" ValueLabel="Windows 应用商店项目">
+      <Condition Expression="HasCategory('CodeMap_WindowsStoreProject')" />
+      <Setter Property="Icon" Value="CodeMap_WindowsStoreProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="电话项目" ValueLabel="电话项目">
+      <Condition Expression="HasCategory('CodeMap_PhoneProject')" />
+      <Setter Property="Icon" Value="CodeMap_PhoneProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="可移植库" ValueLabel="可移植库">
+      <Condition Expression="HasCategory('CodeMap_PortableLibraryProject')" />
+      <Setter Property="Icon" Value="CodeMap_PortableLibraryProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="WPF 项目" ValueLabel="WPF 项目">
+      <Condition Expression="HasCategory('CodeMap_WpfProject')" />
+      <Setter Property="Icon" Value="CodeMap_WpfProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VSIX 项目" ValueLabel="VSIX 项目">
+      <Condition Expression="HasCategory('CodeMap_VsixProject')" />
+      <Setter Property="Icon" Value="CodeMap_VsixProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="建模项目" ValueLabel="建模项目">
+      <Condition Expression="HasCategory('CodeMap_ModelingProject')" />
+      <Setter Property="Icon" Value="CodeMap_ModelingProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="程序集" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="命名空间" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="接口" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="结构" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="枚举" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="委托" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="属性" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="方法" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="事件" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="字段" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out 参数" ValueLabel="具有类别">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="参数" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="局部变量" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="外部" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="继承自" ValueLabel="True">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="实现" ValueLabel="True">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="调用" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="函数指针" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段读取" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段写入" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldWrite')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+      <Setter Property="IsHidden" Value="false" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="返回" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="引用" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('References')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="使用特性" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="解决方案文件夹" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeMap_SolutionFolder')" />
+      <Setter Property="Background" Value="#FFDEBA83" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="项目引用" ValueLabel="项目引用">
+      <Condition Expression="HasCategory('CodeMap_ProjectReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="外部引用" ValueLabel="外部引用">
+      <Condition Expression="HasCategory('CodeMap_ExternalReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="注释" ValueLabel="包含注释">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="5557f76c-f246-4632-8a26-5a110fade11b.OutputPath" Value="C:\Users\admin\Desktop\Project1\Debug\Project1.exe" />
+    <Path Id="5557f76c-f246-4632-8a26-5a110fade11b.OutputPathUri" Value="file:///C:/Users/admin/Desktop/Project1/Debug/Project1.exe" />
+  </Paths>
+</DirectedGraph>
